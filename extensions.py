@@ -25,7 +25,7 @@ class Converter:
             raise ConvertionException(f'Не удалось обработать валюту {base}')
 
         try:
-            amount = float(amount)
+            amount = float(amount.replace(',', '.'))
         except ValueError:
             raise ConvertionException(f'Не удалось обработать количество {quote}')
 
